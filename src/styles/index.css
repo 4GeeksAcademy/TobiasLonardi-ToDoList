@@ -1,11 +1,30 @@
-/* 
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+ul{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
 
-*/
+ul > li{
+    padding: 7px 12px;
+    padding-left: 43%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+ul > li > i{
+    border: 0px solid green;
+    padding: 2px 15px;
+    color: red;
+    font-size: 1.5rem;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: all .3s;
+}
+
+ul > li > i:hover{
+    opacity: 1;
+}

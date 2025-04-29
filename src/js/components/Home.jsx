@@ -12,11 +12,12 @@ const Home = () => {
 	const [toDos,setToDos] = useState([]);
 
 	const addToList = (event) => {
-		if(event.key == "Enter"){
+		if(event.key == "Enter" && task!=""){
 			setToDos(
-				...toDos,
-				task
+				[...toDos,
+				task]
 			)
+			setTask("")
 		}
 	}
 
@@ -24,22 +25,27 @@ const Home = () => {
 		setTask(
 			event.target.value
 		)
-		console.log(task)
 
+	}
+
+	const eliminateElement= (position) =>{
+		const result = toDos.filter((item,index) => index!=position )
+		setToDos(result)
 	}
 
 	return (
 		<div className="container m-5 ">
-			<div className="row d-flex justify-content-center align-items-center">
+			<div className="row d-flex justify-content-center align-items-center text-center">
 				<h1 className="text-center">
 					todos
 				</h1>
 				<div className="col-12 border">
-					<form action="">
+					<form action="" onSubmit={(event) => event.preventDefault()}>
 						<input type="text"
 							placeholder="What needs to be done?"
 							name="task"
 							onChange={changeController}
+							value={task}
 							onKeyDown={addToList}
 						/>
 					</form>
@@ -48,11 +54,14 @@ const Home = () => {
 					{
 						toDos.map((value,index) => {
 							return(
-								<li key={index}>{value} </li>
+								<li key={index} className="border-bottom">{value}
+									<i className="fa-solid fa-xmark" onClick={() => eliminateElement(index)}></i>
+								</li>
 							)
 						})
 					}
 				</ul>
+				<h6>item left {toDos.length}</h6>
 			</div>
 		</div>
 
