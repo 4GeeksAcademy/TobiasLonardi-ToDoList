@@ -1,3 +1,10 @@
+h1{
+    color: rgba(250, 216, 104, 0.504);
+}
+
+h6{
+    padding-right: 15%;
+}
 
 ul{
     padding: 0px;
@@ -7,7 +14,7 @@ ul{
 
 ul > li{
     padding: 7px 12px;
-    padding-left: 43%;
+    padding-left: 41%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,6 +24,7 @@ ul > li{
 ul > li > i{
     border: 0px solid green;
     padding: 2px 15px;
+    padding-left: 10%;
     color: red;
     font-size: 1.5rem;
     width: 100%;
