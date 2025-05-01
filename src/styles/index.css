@@ -4,7 +4,7 @@ h1{
 }
 
 h6{
-    padding-right: 15%;
+
 }
 
 ul{
@@ -15,25 +15,30 @@ ul{
 
 ul > li{
     padding: 7px 12px;
-    padding-left: 41%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
 }
+ul > li > span{
+    border: 0px;
+    position : absolute;
+    inset: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0px 10px;
+    opacity: 0;
+    transition: all .3s;
 
+}
+
+ul > li > span:hover{
+    opacity: 1;
+}
 ul > li > i{
     border: 0px solid green;
     padding: 2px 15px;
-    padding-left: 10%;
     color: grey;
     font-size: 1.5rem;
-    width: 100%;
-    position: absolute;
-    opacity: 0;
-    transition: all .3s;
-}
-
-ul > li > i:hover{
-    opacity: 1;
 }
